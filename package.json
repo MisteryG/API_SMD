@@ -13,7 +13,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node index.js"
   },
   "author": "Alberto De La Paz",
   "license": "ISC"

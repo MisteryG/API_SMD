@@ -4,7 +4,7 @@ require ('dotenv').config()
 const express = require ('express');
 const cors = require ('cors');
 const app = express();
-const port = process.env.port || 4000;
+const port = process.env.port || 8080;
 const Query = require ('./lib/query.js');
 const bodyParser = require('body-parser')
 
@@ -20,6 +20,8 @@ app.get('/consulta', async (req, res) => {
     let mensaje
     if (req.body.accion==='total') {
         mensaje = await Query.getTotDatos(req.body.identificador)
+    } else if (req.body.accion==='menu') {
+        mensaje = await Query.getMenu(req.body.identificador)
     } else if (req.body.accion==='menu') {
         mensaje = await Query.getMenu(req.body.identificador)
     } else {
