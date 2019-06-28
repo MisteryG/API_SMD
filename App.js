@@ -22,13 +22,8 @@ app.get('/consulta', async (req, res) => {
         mensaje = await Query.getTotDatos(req.body.identificador)
     } else if (req.body.accion==='menu') {
         mensaje = await Query.getMenu(req.body.identificador)
-<<<<<<< HEAD
-    } else if (req.body.accion==='menu') {
-        mensaje = await Query.getMenu(req.body.identificador)
-=======
     } else if (req.body.accion==='monitoreo') {
         mensaje = await Query.getMonitoreo(req.body.identificador,req.body.selector)
->>>>>>> desarrollo
     } else {
         mensaje={
             aviso : "0x400",
