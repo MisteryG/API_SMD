@@ -4,14 +4,16 @@
   "description": "api sistema de monitoreo de desarrollos",
   "main": "App.js",
   "dependencies": {
-    "express": "^4.17.1",
     "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
     "mongodb": "^3.2.7",
-    "mongoose": "^5.6.1"
+    "mongoose": "^5.6.1",
+    "win-node-env": "^0.4.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js"
   },
   "author": "Alberto De La Paz",
   "license": "ISC"
