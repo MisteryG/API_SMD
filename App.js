@@ -6,14 +6,17 @@ const cors = require ('cors');
 const app = express();
 const port = process.env.port || 8080;
 const Query = require ('./lib/query.js');
-const bodyParser = require('body-parser');
+const Mut = require ('./lib/mutations.js');
+const bodyParser = require('body-parser')
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/informe', (req, res) => {
-
+app.post('/informe', async (req, res) => {
+    let mensaje
+    mensaje = await Mut.insertValue(req.body.identificador,req.body.datos)
+    res.json(mensaje)
 });
 
 app.post('/consulta', async (req, res) => {
