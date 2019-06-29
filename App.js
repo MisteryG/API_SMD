@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/informe', async (req, res) => {
     let mensaje
-    //mensaje = await insertValue(req.body.identificador,req.body.datos)
-    res.json(req.body)
+    mensaje = await Mut.insertValue(req.body.identificador,req.body.datos)
+    res.json(mensaje)
 });
 
 app.post('/consulta', async (req, res) => {
