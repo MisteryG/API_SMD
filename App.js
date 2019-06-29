@@ -19,7 +19,7 @@ app.post('/informe', async (req, res) => {
 
 });
 
-app.get('/consulta', async (req, res) => {
+app.post('/consulta', async (req, res) => {
     let mensaje
     if (req.body.accion==='total') {
         mensaje = await Query.getTotDatos(req.body.identificador)
