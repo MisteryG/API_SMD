@@ -18,6 +18,7 @@ app.post('/informe', (req, res) => {
 
 app.get('/consulta', async (req, res) => {
     let mensaje
+    console.log (req.body)
     if (req.body.accion==='total') {
         mensaje = await Query.getTotDatos(req.body.identificador)
     } else if (req.body.accion==='menu') {
