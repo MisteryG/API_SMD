@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/informe', async (req, res) => {
     let mensaje
-    mensaje = await insertValue(req.body.identificador,req.body.datos)
-
+    //mensaje = await insertValue(req.body.identificador,req.body.datos)
+    res.json(req.body)
 });
 
 app.post('/consulta', async (req, res) => {
