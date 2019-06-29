@@ -6,7 +6,7 @@ const cors = require ('cors');
 const app = express();
 const port = process.env.port || 8080;
 const Query = require ('./lib/query.js');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -16,9 +16,8 @@ app.post('/informe', (req, res) => {
 
 });
 
-app.get('/consulta', async (req, res) => {
+app.post('/consulta', async (req, res) => {
     let mensaje
-    console.log (req.body)
     if (req.body.accion==='total') {
         mensaje = await Query.getTotDatos(req.body.identificador)
     } else if (req.body.accion==='menu') {
